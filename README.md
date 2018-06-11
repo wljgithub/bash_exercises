@@ -1,2 +1,3 @@
-# linux-journey
-bash exercises in the book of &lt;&lt;Bash Guide For beginner>>
+# Linux学习之路
+将学过和要学习的Linux知识整理成一个体系
+
