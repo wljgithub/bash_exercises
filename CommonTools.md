@@ -19,3 +19,7 @@ GNU Wget是一个可以从网站中下载文件的工具，支持 HTTP，HTTPS�
 
 [GNU文档参考](https://www.gnu.org/software/wget/manual/wget.html)
 
+
+## yum
+
+[ Red Hat Customer Portal](https://access.redhat.com/solutions/9934)

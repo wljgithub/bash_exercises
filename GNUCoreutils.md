@@ -1,6 +1,6 @@
 [TOC]
 
-# Goal
+# 目的
 
 - 之所以想整理[GNUCoreutils](https://www.gnu.org/software/coreutils/manual/html_node/index.html)的目的在于希望在脑海里构建一个linux工具体系，当建立起工具体系的概念后，以后对linux中的各种命令的使用就不会这么混乱了，否则学习再久，如果知识不成体系，也都只是在强行的背那个命令而已，没太大的意义。
 
@@ -9,7 +9,7 @@
  
 # 目录
 
- 
+
 ```
 下载
 wget
@@ -32,6 +32,56 @@ iptables
 ip
 
 ```
+
+## 截取文件文本(Ouput of parts of files)
+
+### head
+
+head 默认输出文件的前十行，如果未给定参数或给定-符号，则从标准输入读取
+
+```shell
+head [option]… [file]…
+```
+如果给定多个文件，则会在打印每个文件的头部，以便区分
+
+option：
+
++ -c [-]num /--bytes=[-]num 打印前xx字节，如果num前带"-"号则打印除了倒数第xx字节以外的所有内容，也可以打印KB或MB等，如下：
+```
+‘b’  =>            512 ("blocks")
+‘KB’ =>           1000 (KiloBytes)
+‘K’  =>           1024 (KibiBytes)
+‘MB’ =>      1000*1000 (MegaBytes)
+‘M’  =>      1024*1024 (MebiBytes)
+‘GB’ => 1000*1000*1000 (GigaBytes)
+‘G’  => 1024*1024*1024 (GibiBytes)
+```
+当然，还有更打的 ‘T’, ‘P’, ‘E’, ‘Z容量也是支持的
++ -n [-]num/ --lines=[-]num 打印前xx行，带"-"号则打印前xx行以为的所有内容
++ -q /--quiet/--silent 不打印文件头部(多个文件的时候会用到)
+
+### tail
+
+tail 默认打印文件末尾的10行文本，如果未给定参数或给定-符号，则从标准输入读取
+
+```shell
+tail [option]… [file]…
+```
+
+option：
++ -c[+]num/--bytes=[+]num 末尾xx字节，带＋号则是除了头xx字节外的所有字节,与head一样tail也支持其他换算单位，如下：
+
+```shell
+‘b’  =>            512 ("blocks")
+‘KB’ =>           1000 (KiloBytes)
+‘K’  =>           1024 (KibiBytes)
+‘MB’ =>      1000*1000 (MegaBytes)
+‘M’  =>      1024*1024 (MebiBytes)
+‘GB’ => 1000*1000*1000 (GigaBytes)
+‘G’  => 1024*1024*1024 (GibiBytes)
+```
++ -f
+
 ## Summarizing files(直译过来好怪)
 
 ### md5sum
